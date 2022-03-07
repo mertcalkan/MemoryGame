@@ -272,6 +272,7 @@ function cardGenerator() {
 }
 const checkCards = (e) => {
    const clickedCard = e.target;
+  // var allcardsFinished = document.querySelectorAll(".OutOfGame");
   var flag = false;
   var allCards = document.querySelectorAll(".card");
    clickedCard.classList.add('flipped');
@@ -279,7 +280,13 @@ const checkCards = (e) => {
   var temp = document.querySelectorAll('.toggleCard');
   var y = 0;
   var x =0;
-  // var matchedCards = document.querySelectorAll(".OutOfGame");
+  
+  allCards.forEach((card) => {
+    card.style.pointerEvents = "auto";
+    
+    
+  });
+  
   for (var i = 0; i < temp.length; i++) {
     if (!temp[i].classList.contains('OutOfGame')) {
       flippedCards[y] = temp[i];
@@ -289,14 +296,14 @@ const checkCards = (e) => {
   }
   console.log(flippedCards);
   
-  //  if(flippedCards.length == 1){
+    if(flippedCards.length == 1){
     
     
-  //    temp[0].style.pointerEvents="none";
+      temp[0].style.pointerEvents="none";
      
     
     
-  // }
+   }
     
    
     
@@ -304,6 +311,11 @@ const checkCards = (e) => {
   
   
  if (flippedCards.length === 2) {
+    allCards.forEach((card) => {
+          card.style.pointerEvents = "auto";
+         
+         
+        });
   
     if (
       flippedCards[0].getAttribute('name') ===
@@ -325,10 +337,33 @@ const checkCards = (e) => {
       console.log('Wrong!');
       
       
-        // temp[0].style.pointerEvents="auto" ;
+         temp[0].style.pointerEvents="auto" ;
+         
+          allCards.forEach((card) => {
+           card.style.pointerEvents = "none"
+          });
+          if(playerLives < 6 && playerLives != 0){
+          allCards.forEach((card) => {
+            setTimeout(() => card.style.pointerEvents = "auto",1000);
+          });
+        }
+          
+          
+              
+              // allCards.forEach((card) => {
+              //   card.style.pointerEvents = "auto";
+              // });
+            
+              
+            
+          
+        
+      
         
         
-        
+        // if(allcardsFinished.length ==16){
+        //   document.getElementById('hp').innerText = "You WON!(";  
+        //  } 
       
       
       
@@ -337,6 +372,7 @@ const checkCards = (e) => {
         allCards.forEach((card) => {
           card.style.pointerEvents = "none";
           setTimeout(() => card.classList.remove('toggleCard'), 1000);
+          
         });
         
         // alert("Game Over");
@@ -363,8 +399,14 @@ const checkCards = (e) => {
   // }
  else if(flippedCards.length > 2) {
    
+   
      if(flippedCards[2].getAttribute("name") === flippedCards[3].getAttribute("name")){
-     flag = true;
+      flippedCards[2].classList.add('OutOfGame');
+      flippedCards[3].classList.add('OutOfGame');
+      
+
+        flippedCards[2].style.pointerEvents = 'none';
+        flippedCards[3].style.pointerEvents = 'none';
      console.log("This is a match!");
      
      
@@ -396,7 +438,7 @@ const checkCards = (e) => {
    
    
  }
-  
+
 };
 
 cardGenerator();
