@@ -88,11 +88,11 @@ const albums = [
   },
   {
     imgSrc: './images/Draining Love Story.jfif ',
-    name: 'Draining Love Story ',
+    name: 'Draining Love Story',
   },
   {
     imgSrc: './images/Draining Love Story.jfif ',
-    name: 'Draining Love Story ',
+    name: 'Draining Love Story',
   },
   {
     imgSrc: './images/Slowdive Souvlaki.jpg',
@@ -121,11 +121,11 @@ const albums = [
   },
   {
     imgSrc: './images/Ecco2k.jpg ',
-    name: 'Ecco2k - E ',
+    name: 'Ecco2k - E',
   },
   {
     imgSrc: './images/Ecco2k.jpg ',
-    name: 'Ecco2k - E ',
+    name: 'Ecco2k - E',
   },
   {
     imgSrc: './images/Bladee Icedancer.jpg',
@@ -153,7 +153,7 @@ const albums = [
   },
   {
     imgSrc: './images/MfDoom.jpg',
-    name: 'Operation : Doomsday ',
+    name: 'Operation : Doomsday',
   },
   {
     imgSrc: './images/MfDoom.jpg',
@@ -162,7 +162,7 @@ const albums = [
 
   {
     imgSrc: './images/Goldie.jpg',
-    name: 'Timeless ',
+    name: 'Timeless',
   },
   {
     imgSrc: './images/Goldie.jpg',
@@ -264,48 +264,140 @@ function cardGenerator() {
     // }
     card.addEventListener('click', (e) => {
       card.classList.toggle('toggleCard');
+      
+      
       checkCards(e);
     });
   });
 }
 const checkCards = (e) => {
-  const clickedCard = e.target;
+   const clickedCard = e.target;
   var flag = false;
-  clickedCard.classList.add('flipped');
+  var allCards = document.querySelectorAll(".card");
+   clickedCard.classList.add('flipped');
   var flippedCards = [];
   var temp = document.querySelectorAll('.toggleCard');
   var y = 0;
+  var x =0;
+  // var matchedCards = document.querySelectorAll(".OutOfGame");
   for (var i = 0; i < temp.length; i++) {
     if (!temp[i].classList.contains('OutOfGame')) {
       flippedCards[y] = temp[i];
       y++;
+      x++;
     }
   }
   console.log(flippedCards);
-
-  if (flippedCards.length == 2) {
+  
+  //  if(flippedCards.length == 1){
+    
+    
+  //    temp[0].style.pointerEvents="none";
+     
+    
+    
+  // }
+    
+   
+    
+    
+  
+  
+ if (flippedCards.length === 2) {
+  
     if (
       flippedCards[0].getAttribute('name') ===
       flippedCards[1].getAttribute('name')
     ) {
       flag = true;
       console.log('This is a match!');
+      console.log(flippedCards.length);
       for (var i = 0; i < 2; i++) {
         flippedCards[i].classList.add('OutOfGame');
+        
+
         flippedCards[i].style.pointerEvents = 'none';
+        
       }
     } else {
       playerLives -= 1;
-      document.getElementById('hp').innerHTML = playerLives;
+      document.getElementById('hp').innerText = playerLives;
       console.log('Wrong!');
+      
+      
+        // temp[0].style.pointerEvents="auto" ;
+        
+        
+        
+      
+      
+      
+      if(playerLives===0){
+        document.getElementById('hp').innerText = "0  -  Game Over :(";
+        allCards.forEach((card) => {
+          card.style.pointerEvents = "none";
+          setTimeout(() => card.classList.remove('toggleCard'), 1000);
+        });
+        
+        // alert("Game Over");
+        // for (var i = 0; i <flippedCards.length; i++){
+          
+          
+          
+        //   setTimeout(() => flippedCards.classList.remove('toggleCard'), 1000);
+        //   section.style.pointerEvents="none" ;
+          
+        // }
+          
+      }
     }
-    if (!flag) {
+    if (!flag ) {
       flippedCards.forEach((card) => {
         card.classList.remove('flipped');
         setTimeout(() => card.classList.remove('toggleCard'), 1000);
       });
     }
   }
+  // if(!temp[i].classList.contains('OutOfGame')&&!!temp[i].classList.contains('OutOfGame')){
+
+  // }
+ else if(flippedCards.length > 2) {
+   
+     if(flippedCards[2].getAttribute("name") === flippedCards[3].getAttribute("name")){
+     flag = true;
+     console.log("This is a match!");
+     
+     
+    //  for (var i = 0; i < 2; i++) {
+    //   flippedCards[i].classList.add('OutOfGame');
+      
+
+    //   flippedCards[i].style.pointerEvents = 'none';
+      
+    // }
+  }
+  else{
+    flag = false;
+  }
+  // } else {
+  //   playerLives -= 1;
+  //   document.getElementById('hp').innerText = playerLives;
+  //   console.log('Wrong!');
+  
+   
+  //  flag= false;
+   if (!flag ) {
+    flippedCards.forEach((card) => {
+      card.classList.remove('flipped');
+      setTimeout(() => card.classList.remove('toggleCard'), 1000);
+    });
+  }
+  
+   
+   
+ }
+  
 };
 
 cardGenerator();
+
