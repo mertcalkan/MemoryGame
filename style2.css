@@ -10,12 +10,13 @@
     object-fit: cover;
 } */
 body{
-height:100vh;
+height:105vh;
    background:linear-gradient(to right, #66ffcc 0%, #ff99cc 100%);
    display:flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
+  
 }
 section{
     display: grid;
@@ -51,4 +52,21 @@ transform: rotateY(180deg);
 }
 .face{
     transform:rotateY(180deg);
+}
+/* #res-btn{
+    font-size :20px;
+
+position:relative;
+bottom:px;
+} */
+section{
+position:relative; 
+bottom:-14px;
+}
+.btn{
+font-size :14.5px;
+
+position:relative;
+bottom:-5px;
+
 }

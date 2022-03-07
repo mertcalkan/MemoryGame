@@ -1,3 +1,4 @@
+
 const section = document.querySelector('section');
 const playerLivesCount = document.querySelector('span');
 var playerLives = 6;
@@ -272,7 +273,7 @@ function cardGenerator() {
 }
 const checkCards = (e) => {
    const clickedCard = e.target;
-  // var allcardsFinished = document.querySelectorAll(".OutOfGame");
+  // var allcardsFinished = document.querySelectorAll("");
   var flag = false;
   var allCards = document.querySelectorAll(".card");
    clickedCard.classList.add('flipped');
@@ -281,11 +282,7 @@ const checkCards = (e) => {
   var y = 0;
   var x =0;
   
-  allCards.forEach((card) => {
-    card.style.pointerEvents = "auto";
-    
-    
-  });
+  
   
   for (var i = 0; i < temp.length; i++) {
     if (!temp[i].classList.contains('OutOfGame')) {
@@ -298,8 +295,9 @@ const checkCards = (e) => {
   
     if(flippedCards.length == 1){
     
-    
-      temp[0].style.pointerEvents="none";
+     for(var i = 0; i<16; i++){
+      temp[i].style.pointerEvents="none";
+    }
      
     
     
@@ -311,11 +309,7 @@ const checkCards = (e) => {
   
   
  if (flippedCards.length === 2) {
-    allCards.forEach((card) => {
-          card.style.pointerEvents = "auto";
-         
-         
-        });
+   
   
     if (
       flippedCards[0].getAttribute('name') ===
@@ -329,6 +323,7 @@ const checkCards = (e) => {
         
 
         flippedCards[i].style.pointerEvents = 'none';
+        
         
       }
     } else {
@@ -344,7 +339,7 @@ const checkCards = (e) => {
           });
           if(playerLives < 6 && playerLives != 0){
           allCards.forEach((card) => {
-            setTimeout(() => card.style.pointerEvents = "auto",550);
+            setTimeout(() => card.style.pointerEvents = "auto", 550);
           });
         }
           
@@ -361,37 +356,51 @@ const checkCards = (e) => {
       
         
         
-        // if(allcardsFinished.length ==16){
-        //   document.getElementById('hp').innerText = "You WON!(";  
-        //  } 
+         
       
       
       
       if(playerLives===0){
-        document.getElementById('hp').innerText = "0  -  Game Over :(";
+        document.getElementById('hp-h1').innerText = " Game Over :(";
         allCards.forEach((card) => {
           card.style.pointerEvents = "none";
           setTimeout(() => card.classList.remove('toggleCard'), 1200);
           
+          
         });
+        // document.getElementById("res-btn").innerHTML = "<button>" +
+        // "Restart"
+        //    "</button>";
+           
         
-        // alert("Game Over");
-        // for (var i = 0; i <flippedCards.length; i++){
-          
-          
-          
-        //   setTimeout(() => flippedCards.classList.remove('toggleCard'), 1000);
-        //   section.style.pointerEvents="none" ;
-          
-        // }
+
+        
+        
+        
+       
           
       }
+      
     }
     if (!flag ) {
       flippedCards.forEach((card) => {
         card.classList.remove('flipped');
         setTimeout(() => card.classList.remove('toggleCard'), 750);
       });
+    }
+
+    if(temp.length ===16){
+      document.getElementById("hp-h1").innerText ="Congratulations , You Win!";
+      console.log("Congratulations , You Win!");
+      // var button = document.getElementById("res-btn").innerHTML = "<button>" +
+      // "Restart"
+      //    "</button>"
+      //    button.classList.add("btn");
+        
+       
+          
+      
+      
     }
   }
  
@@ -400,4 +409,5 @@ const checkCards = (e) => {
 };
 
 cardGenerator();
+
 
