@@ -344,7 +344,7 @@ const checkCards = (e) => {
           });
           if(playerLives < 6 && playerLives != 0){
           allCards.forEach((card) => {
-            setTimeout(() => card.style.pointerEvents = "auto",1000);
+            setTimeout(() => card.style.pointerEvents = "auto",500);
           });
         }
           
@@ -390,24 +390,24 @@ const checkCards = (e) => {
     if (!flag ) {
       flippedCards.forEach((card) => {
         card.classList.remove('flipped');
-        setTimeout(() => card.classList.remove('toggleCard'), 1000);
+        setTimeout(() => card.classList.remove('toggleCard'), 750);
       });
     }
   }
   // if(!temp[i].classList.contains('OutOfGame')&&!!temp[i].classList.contains('OutOfGame')){
 
   // }
- else if(flippedCards.length > 2) {
+//  else if(flippedCards.length > 2) {
    
    
-     if(flippedCards[2].getAttribute("name") === flippedCards[3].getAttribute("name")){
-      flippedCards[2].classList.add('OutOfGame');
-      flippedCards[3].classList.add('OutOfGame');
+//      if(flippedCards[2].getAttribute("name") === flippedCards[3].getAttribute("name")){
+//       flippedCards[2].classList.add('OutOfGame');
+//       flippedCards[3].classList.add('OutOfGame');
       
 
-        flippedCards[2].style.pointerEvents = 'none';
-        flippedCards[3].style.pointerEvents = 'none';
-     console.log("This is a match!");
+//         flippedCards[2].style.pointerEvents = 'none';
+//         flippedCards[3].style.pointerEvents = 'none';
+//      console.log("This is a match!");
      
      
     //  for (var i = 0; i < 2; i++) {
@@ -417,10 +417,8 @@ const checkCards = (e) => {
     //   flippedCards[i].style.pointerEvents = 'none';
       
     // }
-  }
-  else{
-    flag = false;
-  }
+  // }
+  
   // } else {
   //   playerLives -= 1;
   //   document.getElementById('hp').innerText = playerLives;
@@ -428,16 +426,11 @@ const checkCards = (e) => {
   
    
   //  flag= false;
-   if (!flag ) {
-    flippedCards.forEach((card) => {
-      card.classList.remove('flipped');
-      setTimeout(() => card.classList.remove('toggleCard'), 1000);
-    });
-  }
+  
   
    
    
- }
+//  }
 
 };
 
