@@ -30,6 +30,9 @@ section{
    transform-style: preserve-3d;
    transition : all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
    box-shadow:rgba(0,0,0,0.2) 0px 5px 15px;
+   font-size: 20px;
+   
+   
    
    
 }
@@ -40,10 +43,14 @@ section{
 height: 100%;
 width: 100%;
 position: absolute;
+
 }
-.back{background: white; 
+
+.back{
+background-color : white;
  backface-visibility: hidden;
  pointer-events: none;
+ 
 }
 
 .toggleCard{
@@ -64,9 +71,30 @@ position:relative;
 bottom:-14px;
 }
 .btn{
-font-size :14.5px;
+font-size :15.5px;
 
 position:relative;
 bottom:-5px;
 
 }
+footer{
+    position: relative;
+    bottom:-40px;
+}
+@media (min-width: 600px) and (max-width : 900px) {
+    section 
+    { grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(4, auto); 
+        
+    }
+    .face,
+    .back{
+    height: 100%;
+    width : 100%;
+    }
+    .card{
+        height: 40%;
+        width: 40%;
+    }
+
+  }

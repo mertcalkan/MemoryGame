@@ -220,6 +220,8 @@ const albums = [
   },
 ];
 
+
+
 // const data = getData();
 
 //Randomize
@@ -254,6 +256,8 @@ function cardGenerator() {
     back.classList = 'back';
     //attach the cards to section
     face.src = item.imgSrc;
+   
+    
     card.setAttribute('name', item.name);
     section.appendChild(card);
     card.appendChild(face);
