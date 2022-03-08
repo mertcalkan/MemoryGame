@@ -1,7 +1,7 @@
 
 const section = document.querySelector('section');
 const playerLivesCount = document.querySelector('span');
-var playerLives = 6;
+var playerLives = 7;
 
 playerLivesCount.textContent = playerLives;
 //getting items
@@ -337,7 +337,7 @@ const checkCards = (e) => {
           allCards.forEach((card) => {
            card.style.pointerEvents = "none"
           });
-          if(playerLives < 6 && playerLives != 0){
+          if(playerLives < 7 && playerLives != 0){
           allCards.forEach((card) => {
             setTimeout(() => card.style.pointerEvents = "auto", 550);
           });
@@ -407,6 +407,11 @@ const checkCards = (e) => {
   
 
 };
+function refresh() {    
+  setTimeout(function () {
+      location.reload()
+  }, 100);
+}
 
 cardGenerator();
 
