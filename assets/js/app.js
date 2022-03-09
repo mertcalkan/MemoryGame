@@ -6,54 +6,38 @@ var playerLives = 7;
 playerLivesCount.textContent = playerLives;
 //getting items
 
-const composers = [
+const albums = [
   {
-    imgSrc: './images/Mozart.jpg',
-    name: 'Wolfgang Amadeus Mozart',
+    imgSrc: './images/Demis Roussos.jfif',
+    name: 'Forever and Ever',
   },
   {
-    imgSrc: './images/Mozart.jpg',
-    name: 'Wolfgang Amadeus Mozart',
+    imgSrc: './images/Demis Roussos.jfif',
+    name: 'Forever and Ever',
   },
   {
-    imgSrc: './images/Mendelssohn.jpg',
-    name: 'Felix Mendelssohn',
+    imgSrc: './images/Dieselboy 6ixth Session.jpg',
+    name: 'Dieselboy 6ixth Session',
   },
   {
-    imgSrc: './images/Mendelssohn.jpg',
-    name: 'Felix Mendelssohn',
+    imgSrc: './images/Dieselboy 6ixth Session.jpg',
+    name: 'Dieselboy 6ixth Session',
   },
   {
-    imgSrc: './images/Rachmaninoff.jpg',
-    name: 'Sergei Rachmaninov',
+    imgSrc: './images/Geogaddi.jpg',
+    name: 'Geogaddi',
   },
   {
-    imgSrc: './images/Rachmaninoff.jpg',
-    name: 'Sergei Rachmaninov',
+    imgSrc: './images/Geogaddi.jpg',
+    name: 'Geogaddi',
   },
   {
-    imgSrc: './images/Haydn.jpg',
-    name: 'Joseph Haydn',
+    imgSrc: './images/Hold Your Color.jpg',
+    name: 'Hold Your Color',
   },
   {
-    imgSrc: './images/Haydn.jpg',
-    name: 'Joseph Haydn',
-  },
-  {
-    imgSrc: './images/Beethoven.jpg',
-    name: 'Ludvig Van Beethoven',
-  },
-  {
-    imgSrc: './images/Beethoven.jpg',
-    name: 'Ludvig Van Beethoven',
-  },
-  {
-    imgSrc: './images/Chopin.jpg',
-    name: 'Frédéric Chopin',
-  },
-  {
-    imgSrc: './images/Chopin.jpg',
-    name: 'Frédéric Chopin',
+    imgSrc: './images/Hold Your Color.jpg',
+    name: 'Hold Your Color',
   },
   {
     imgSrc: './images/Ivan Wyschnegradsky.jpg',
@@ -248,7 +232,7 @@ function randomize() {
     return Math.floor((Math.random() * (even2 - even1)) / 2) * 2;
   }
   const rndInt = randomIntFromInterval(0, 38);
-  const cardData = composers;
+  const cardData = albums;
   const slicedCard = cardData.slice(rndInt, rndInt + 16);
 
   return slicedCard;
@@ -292,21 +276,24 @@ function cardGenerator() {
   });
 }
 const checkCards = (e) => {
-   const clickedCard = e.target;
-  // var allcardsFinished = document.querySelectorAll("");
+  const clickedCard = e.target;
+ 
+  var matchedCards = document.querySelectorAll(".OutOfGame");
+  
   var flag = false;
   var allCards = document.querySelectorAll(".card");
-   clickedCard.classList.add('flipped');
+  clickedCard.classList.add('flipped');
   var flippedCards = [];
   var temp = document.querySelectorAll('.toggleCard');
   var y = 0;
-  var x =0;
+  var x = 0;
   
   
   
   for (var i = 0; i < temp.length; i++) {
     if (!temp[i].classList.contains('OutOfGame')) {
       flippedCards[y] = temp[i];
+      
       y++;
       x++;
     }
@@ -315,13 +302,19 @@ const checkCards = (e) => {
   
     if(flippedCards.length == 1){
     
-     for(var i = 0; i<16; i++){
-      temp[i].style.pointerEvents="none";
-    }
+    //  for(var i = 0; i<16; i++){
+    //   temp[i].style.pointerEvents="none";
+    // }
+    temp.forEach((card) => {
+          
+      card.style.pointerEvents="none";
+    });
+   
      
     
     
    }
+   
     
    
     
@@ -339,7 +332,11 @@ const checkCards = (e) => {
       console.log('This is a match!');
       console.log(flippedCards.length);
       for (var i = 0; i < 2; i++) {
+        
         flippedCards[i].classList.add('OutOfGame');
+        
+        
+        
         
 
         flippedCards[i].style.pointerEvents = 'none';
@@ -347,6 +344,14 @@ const checkCards = (e) => {
         
       }
     } else {
+
+      if (!flag ) {
+        flippedCards.forEach((card) => {
+          
+          setTimeout(() => card.classList.remove('toggleCard'), 750);
+        });
+      }
+  
       playerLives -= 1;
       document.getElementById('hp').innerText = playerLives;
       console.log('Wrong!');
@@ -360,15 +365,36 @@ const checkCards = (e) => {
           if(playerLives < 7 && playerLives != 0){
           allCards.forEach((card) => {
             setTimeout(() => card.style.pointerEvents = "auto", 550);
-          });
-        }
-          
-          
-              
-              // allCards.forEach((card) => {
-              //   card.style.pointerEvents = "auto";
-              // });
             
+            
+            
+            
+              
+            
+          });
+          matchedCards.forEach((card) => {
+            setTimeout(() => card.style.pointerEvents = "none", 550);
+            
+            
+            
+            
+            
+              
+            
+          });
+          
+        
+      
+         
+      
+            
+          
+          
+           console.log(temp);
+        
+              
+        }
+        
               
             
           
@@ -388,9 +414,7 @@ const checkCards = (e) => {
           
           
         });
-        // document.getElementById("res-btn").innerHTML = "<button>" +
-        // "Restart"
-        //    "</button>";
+       
            
         
 
@@ -402,20 +426,17 @@ const checkCards = (e) => {
       }
       
     }
-    if (!flag ) {
-      flippedCards.forEach((card) => {
-        card.classList.remove('flipped');
-        setTimeout(() => card.classList.remove('toggleCard'), 750);
-      });
-    }
+    // if (!flag ) {
+    //   flippedCards.forEach((card) => {
+    //     card.classList.remove('flipped');
+    //     setTimeout(() => card.classList.remove('toggleCard'), 750);
+    //   });
+    // }
 
     if(temp.length ===16){
       document.getElementById("hp-h1").innerText ="Congratulations , You Win!";
       console.log("Congratulations , You Win!");
-      // var button = document.getElementById("res-btn").innerHTML = "<button>" +
-      // "Restart"
-      //    "</button>"
-      //    button.classList.add("btn");
+      
         
        
           
