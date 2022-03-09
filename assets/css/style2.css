@@ -85,9 +85,9 @@ footer{
    
     section{
         display: grid;
-        grid-template-columns: repeat(4, 4rem);
-        grid-template-rows: repeat(4, 4rem);
-        grid-gap: 1rem;
+        grid-template-columns: repeat(4, 3rem);
+        grid-template-rows: repeat(4, 3rem);
+        grid-gap: 2rem;
         perspective: 600px;
     }
     /* .face,
@@ -98,8 +98,8 @@ footer{
     } */
     .card{
         position: relative;
-        height: 75%;
-        width: 75%;
+        height: 125%;
+        width: 125%;
     }
     #hp-h1{
         font-size:25px;
