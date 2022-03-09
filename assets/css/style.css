@@ -82,40 +82,41 @@ footer{
     bottom:-40px;
 }
 @media (min-width: 300px) and (max-width : 767px) {
-   
-    section{
-        display: grid;
-        grid-template-columns: repeat(4, 3rem);
-        grid-template-rows: repeat(4, 3rem);
-        grid-gap: 2.75rem;
-        perspective: 600px;
-        position : relative;
-        bottom : 40px;
-    }
+   /* body{
+   height: 100%;    
+   } */
+section{
+ display: grid;
+grid-template-columns: repeat(4, 3rem);
+grid-template-rows: repeat(4, 3rem);
+grid-gap: 2.75rem;
+perspective: 600px;
+position : relative;
+bottom : 40px;
+}
     /* .face,
     .back{
     height: 50%;
     width : 50%;
     position: absolute;
     } */
-    .card{
-        position: relative;
-        height: 145%;
-        width: 145%;
-    }
-    #hp-h1{
-        font-size:25px;
-        position:relative;
-        bottom:95px;
-    }
-    footer{
-        position: relative;
-        bottom:-30px;
+.card{
+ position: relative;
+height: 145%;
+width: 145%;
+}
+#hp-h1{
+font-size:25px;
+position:relative;
+bottom:95px;
+}
+footer{
+position: relative;bottom:-30px;
         
 
-  }
-  .btn{
-    font-size :15.5px;
+}
+.btn{
+ font-size :15.5px;
     
     position:relative;
     bottom:80px;
