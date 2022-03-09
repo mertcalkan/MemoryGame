@@ -8,36 +8,52 @@ playerLivesCount.textContent = playerLives;
 
 const composers = [
   {
-    imgSrc: './images/Demis Roussos.jfif',
-    name: 'Forever and Ever',
+    imgSrc: './images/Mozart.jpg',
+    name: 'Wolfgang Amadeus Mozart',
   },
   {
-    imgSrc: './images/Demis Roussos.jfif',
-    name: 'Forever and Ever',
+    imgSrc: './images/Mozart.jpg',
+    name: 'Wolfgang Amadeus Mozart',
   },
   {
-    imgSrc: './images/Dieselboy 6ixth Session.jpg',
-    name: 'Dieselboy 6ixth Session',
+    imgSrc: './images/Mendelssohn.jpg',
+    name: 'Felix Mendelssohn',
   },
   {
-    imgSrc: './images/Dieselboy 6ixth Session.jpg',
-    name: 'Dieselboy 6ixth Session',
+    imgSrc: './images/Mendelssohn.jpg',
+    name: 'Felix Mendelssohn',
   },
   {
-    imgSrc: './images/Geogaddi.jpg',
-    name: 'Geogaddi',
+    imgSrc: './images/Rachmaninoff.jpg',
+    name: 'Sergei Rachmaninov',
   },
   {
-    imgSrc: './images/Geogaddi.jpg',
-    name: 'Geogaddi',
+    imgSrc: './images/Rachmaninoff.jpg',
+    name: 'Sergei Rachmaninov',
   },
   {
-    imgSrc: './images/Hold Your Color.jpg',
-    name: 'Hold Your Color',
+    imgSrc: './images/Haydn.jpg',
+    name: 'Joseph Haydn',
   },
   {
-    imgSrc: './images/Hold Your Color.jpg',
-    name: 'Hold Your Color',
+    imgSrc: './images/Haydn.jpg',
+    name: 'Joseph Haydn',
+  },
+  {
+    imgSrc: './images/Beethoven.jpg',
+    name: 'Ludvig Van Beethoven',
+  },
+  {
+    imgSrc: './images/Beethoven.jpg',
+    name: 'Ludvig Van Beethoven',
+  },
+  {
+    imgSrc: './images/Chopin.jpg',
+    name: 'Frédéric Chopin',
+  },
+  {
+    imgSrc: './images/Chopin.jpg',
+    name: 'Frédéric Chopin',
   },
   {
     imgSrc: './images/Ivan Wyschnegradsky.jpg',
@@ -232,7 +248,7 @@ function randomize() {
     return Math.floor((Math.random() * (even2 - even1)) / 2) * 2;
   }
   const rndInt = randomIntFromInterval(0, 38);
-  const cardData = albums;
+  const cardData = composers;
   const slicedCard = cardData.slice(rndInt, rndInt + 16);
 
   return slicedCard;

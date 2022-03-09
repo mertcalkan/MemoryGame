@@ -3,12 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* img {
-    float:inline-end;
+img {
+    /* float:inline-end;
     width:  275px;
-    height: 275px;
+    height: 275px; */
     object-fit: cover;
-} */
+}
 body{
 height:105vh;
    background:linear-gradient(to right, #66ffcc 0%, #ff99cc 100%);
