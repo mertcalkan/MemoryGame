@@ -249,6 +249,7 @@ function cardGenerator() {
 
   shuffledArray.forEach((item) => {
     const card = document.createElement('div');
+    
     const face = document.createElement('img');
     const back = document.createElement('div');
     card.classList = 'card';
