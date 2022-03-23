@@ -74,12 +74,21 @@ section{
 position:relative; 
 bottom:-14px;
 }
+p{
+    font-weight:100 ;
+}
 .btn{
-font-size :15.5px;
+font-size :14.5px;
+padding: 5px 5px;
 
 position:relative;
 bottom:-5px;
 
+background:#B9C7CC;
+background:#D5B5CC;
+background:linear-gradient(to right, #82ECCC 0%, #ff99cc 150%);
+border-radius:30px;
+box-shadow: 0.2px 0.4px #888888;
 }
 footer{
     position: relative;
@@ -128,6 +137,7 @@ position: relative;bottom:-30px;
     position:relative;
     bottom:80px;
     
+    
     }
 }
 @media (min-width: 767px) and (max-width : 1250px){
@@ -143,6 +153,7 @@ position: relative;bottom:-30px;
        position:relative;
        bottom:-6px;
        right:15px;
+       
    
        }
    
