@@ -136,6 +136,9 @@ position: relative;bottom:-30px;
     
     position:relative;
     bottom:80px;
+    background:linear-gradient(to right, #82ECCC 0%, #ff99cc 150%);
+border-radius:30px;
+box-shadow: 0.2px 0.4px #888888;
     
     
     }
@@ -153,6 +156,9 @@ position: relative;bottom:-30px;
        position:relative;
        bottom:-6px;
        right:15px;
+    background:linear-gradient(to right, #82ECCC 0%, #ff99cc 150%);
+    border-radius:30px;
+    box-shadow: 0.2px 0.4px #888888;
        
    
        }
@@ -198,6 +204,9 @@ position: relative;bottom:-30px;
     position: relative;
      bottom: 15px;
    right:8px;
+   background:linear-gradient(to right, #82ECCC 0%, #ff99cc 150%);
+border-radius:30px;
+box-shadow: 0.2px 0.4px #888888;
     }
     footer{
      font-size:18px;
