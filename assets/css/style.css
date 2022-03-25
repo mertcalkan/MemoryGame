@@ -27,8 +27,14 @@ section{
 }
 .card{
    position: relative;
-   -webkit-transform-style: preserve-3d;
    transform-style: preserve-3d;
+   -webkit-transform-style: preserve-3d;
+   -ms-transform-style: preserve-3d;
+   -moz-transform-style: preserve-3d;
+   -o-transform-style: preserve-3d;
+   -o-transition:all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   -moz-transition:all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   -ms-transition:all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
    -webkit-transition:all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
    transition : all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
    box-shadow:rgba(0,0,0,0.2) 0px 5px 15px;
@@ -62,10 +68,16 @@ background-color : white;
 .toggleCard{
     
 transform: rotateY(180deg);
+-ms-transform: rotateY(180deg);
+-moz-transform: rotateY(180deg);
+-o-transform:rotateY(180deg);
 -webkit-transform: rotateY(180deg);
 }
 .face{
     transform:rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+-moz-transform: rotateY(180deg);
+-o-transform:rotateY(180deg);
     -webkit-transform: rotateY(180deg);
 }
 /* #res-btn{
