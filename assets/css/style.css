@@ -35,7 +35,7 @@ section{
    -o-transition:all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
    -moz-transition:all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
    -ms-transition:all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-   -webkit-transition:-webkit-transform 2s;
+   -webkit-transition:all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
    transition : all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
    box-shadow:rgba(0,0,0,0.2) 0px 5px 15px;
    font-size: 20px;
@@ -62,7 +62,7 @@ position: absolute;
 background-color : white;
 backface-visibility: hidden;
 -webkit-backface-visibility: hidden;
- 
+
 pointer-events: none;
  
 }
@@ -76,12 +76,13 @@ transform: rotateY(180deg);
 -webkit-transform: rotateY(180deg);
 }
 .face{
+ -webkit-transform : translateZ(0px);
 transform:rotateY(180deg);
 -ms-transform: rotateY(180deg);
 -moz-transform: rotateY(180deg);
 -o-transform:rotateY(180deg);
 -webkit-transform: rotateY(180deg);
-/* -webkit-transform : translateZ(1px); */
+
 }
 /* #res-btn{
     font-size :20px;
