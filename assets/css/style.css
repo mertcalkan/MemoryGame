@@ -76,7 +76,7 @@ transform: rotateY(180deg);
 -webkit-transform: rotateY(180deg);
 }
 .face{
- -webkit-transform : translateZ(0px);
+ -webkit-transform : translateZ(1px);
 transform:rotateY(180deg);
 -ms-transform: rotateY(180deg);
 -moz-transform: rotateY(180deg);
