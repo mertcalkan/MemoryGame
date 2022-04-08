@@ -55,13 +55,14 @@ section{
 height: 100%;
 width: 100%;
 position: absolute;
+ backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
 
 }
 
 .back{
 background-color : white;
-backface-visibility: hidden;
--webkit-backface-visibility: hidden;
+
 
 pointer-events: none;
  
